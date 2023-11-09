@@ -9,4 +9,7 @@ class Feedback(models.Model):
     category = models.CharField(max_length=255)
     message = models.TextField()
     attachment = models.FileField(upload_to='feedback_attchments/', null=True, blank=True)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=True, editable=False)
+
+    def __str__(self) -> str:
+        return super().__str__()
